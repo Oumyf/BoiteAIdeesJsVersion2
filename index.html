@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Idées</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <form id="ideaForm" class="idea-form">
+            <div class="form-group">
+                <label for="libelle">Titre</label>
+                <input type="text" id="libelle" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="categorie">Catégorie</label>
+                <input type="text" id="categorie" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="message_descriptif">Description</label>
+                <textarea id="message_descriptif" class="form-control" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Ajouter</button>
+        </form>
+    
+        <div id="cardContainer" class="mt-4"></div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
