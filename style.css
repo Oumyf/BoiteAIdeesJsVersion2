@@ -5,6 +5,10 @@ body {
   background-color: #f0e7d8; /* Beige clair */
 }
 
+.error{
+  color: red;
+}
+
 .container {
   padding-right: 100px;
   max-width: 1200px;

@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestion des Idées</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
 </head>
 <body>
     <div class="container">
@@ -16,21 +15,25 @@
                     <div class="inputs">
                         <div class="form-group flex-item">
                             <label for="libelle">Libelle</label>
-                            <input type="text" id="libelle" class="form-control" required>
+                            <input type="text" id="libelle" class="form-control">
+                            <span id="errorLibelle" class="error"></span>
                         </div>
                         <div class="form-group flex-item" style="margin-left: 20px; margin-right: -20px;">
                             <label for="categorie">Catégorie</label>
-                            <select id="categorie" class="form-control" required>
+                            <select id="categorie" class="form-control">
                                 <option value="politique">Politique</option>
                                 <option value="sante">Santé</option>
                                 <option value="sport">Sport</option>
                                 <option value="education">Éducation</option>
                             </select>
+                            <span id="errorCategorie" class="error"></span>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="message_descriptif">Description</label>
-                        <textarea id="message_descriptif" class="form-control" rows="4" required></textarea>
+                        <textarea id="message_descriptif" class="form-control" rows="4"></textarea>
+                        <small id="charCount">255 caractères restants</small>
+                        <span id="errorMessage" class="error"></span>
                     </div>
                     <button type="submit" class="btn btn-primary">Ajouter</button>
                 </form>
@@ -47,33 +50,9 @@
 
     <!-- Modale pour les détails des cartes -->
     <div id="modalContainer" class="modal" style="display: none;">
-        <article class="modal-container">
-            <header class="modal-container-header">
-                <span class="modal-container-title">
-                    <svg aria-hidden="true" height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0 0h24v24H0z" fill="none"></path>
-                        <path d="M14 9V4H5v16h6.056c.328.417.724.785 1.18 1.085l1.39.915H3.993A.993.993 0 0 1 3 21.008V2.992C3 2.455 3.449 2 4.002 2h10.995L21 8v1h-7zm-2 2h9v5.949c0 .99-.501 1.916-1.336 2.465L16.5 21.498l-3.164-2.084A2.953 2.953 0 0 1 12 16.95V11zm2 5.949c0 .316.162.614.436.795l2.064 1.36 2.064-1.36a.954.954 0 0 0 .436-.795V13h-5v3.949z" fill="currentColor"></path>
-                    </svg>
-                    <span id="modalTitle">Titre</span>
-                </span>
-                <button id="modalCloseButton" class="icon-button">
-                    <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0 0h24v24H0z" fill="none"></path>
-                        <path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z" fill="currentColor"></path>
-                    </svg>
-                </button>
-            </header>
-            <section id="modalBody" class="modal-container-body rtf">
-                <!-- Contenu de la carte -->
-            </section>
-            <footer class="modal-container-footer">
-                <button class="button is-ghost" id="modalDeclineButton" style="display: none;">Désapprouver</button>
-                <button class="button is-primary" id="modalAcceptButton">Approuver</button>
-                <button class="button is-danger" id="modalDeleteButton">Supprimer</button>
-            </footer>
-        </article>
+        <!-- Contenu de la modale -->
     </div>
-    
-    
+
+    <script src="script.js" defer></script>
 </body>
 </html>
